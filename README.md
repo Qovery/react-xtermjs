@@ -1,5 +1,3 @@
-<br  />
-
 <h1>XTerm.js for React</h1>
 
 <p>
@@ -18,7 +16,6 @@ NPM:
 Yarn:
 
     yarn add react-xtermjs
-
 
 <br />
 <hr />
