@@ -4,12 +4,8 @@
     A React library to use the powerful of <a href="https://github.com/xtermjs/xterm.js" target="_blank">Xterm.js</a>
 </p>
 <p>
-    <a href="https://www.npmjs.com/package/react-xtermjs">
-        <img alt="npm version" src="https://img.shields.io/npm/v/react-xtermjs.svg">
-   </a>
-   <a href="https://www.npmjs.com/package/react-xtermjs">
-        <img alt="npm download" src="https://img.shields.io/npm/dw/react-xtermjs">
-   </a>
+    <a href="https://www.npmjs.com/package/react-xtermjs"><img alt="npm version" src="https://img.shields.io/npm/v/react-xtermjs.svg"></a>
+   <a href="https://www.npmjs.com/package/react-xtermjs"><img alt="npm download" src="https://img.shields.io/npm/dw/react-xtermjs"></a>
 </p>
 <br />
 

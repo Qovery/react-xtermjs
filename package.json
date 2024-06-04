@@ -32,6 +32,18 @@
     "type": "git",
     "url": "https://github.com/Qovery/react-xtermjs.git"
   },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
   "publishConfig": {
     "access": "restricted"
   }
