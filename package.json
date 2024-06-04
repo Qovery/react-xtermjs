@@ -1,6 +1,7 @@
 {
   "name": "react-xtermjs",
-  "version": "1.0.4",
+  "version": "1.0.3",
+  "main": "index.js",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -26,9 +27,6 @@
     "tslib": "^2.6.2",
     "typescript": "^5.4.5"
   },
-  "main": "./dist/bundle.js",
-  "typings": "./dist/types/index.d.ts",
-  "module": "./dist/bundle.min.js",
   "jest": {
     "testEnvironment": "jsdom"
   },

@@ -9,12 +9,12 @@ export default [
     input: 'src/index.ts',
     output: [
       {
-        file: 'dist/bundle.js',
+        file: 'dist/index.js',
         format: 'cjs',
         sourcemap: true,
       },
       {
-        file: 'dist/bundle.min.js',
+        file: 'dist/index.min.js',
         format: 'iife',
         name: 'version',
         plugins: [terser()],
