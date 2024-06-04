@@ -9,7 +9,7 @@ name: Upload NPM Package
 
 on:
   workflow_run:
-    workflows: ['Tagging']
+    workflows: ['Release']
     types:
       - completed
 
