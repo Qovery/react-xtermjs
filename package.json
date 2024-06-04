@@ -1,11 +1,12 @@
 {
   "name": "react-xtermjs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepublish": "npm run build"
   },
   "author": "@RemiBonnet @ctjhoa",
   "license": "ISC",
