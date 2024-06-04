@@ -3,6 +3,7 @@ import typescript from '@rollup/plugin-typescript'
 import commonjs from '@rollup/plugin-commonjs'
 import terser from '@rollup/plugin-terser'
 import postcss from 'rollup-plugin-import-css'
+import copy from 'rollup-plugin-copy'
 
 export default [
   {
@@ -30,6 +31,12 @@ export default [
         tsconfig: './tsconfig.json',
       }),
       postcss({ extensions: ['.css'], inject: true, extract: false }),
+      copy({
+        targets: [
+          { src: 'package.json', dest: 'dist' },
+          { src: 'README.md', dest: 'dist' },
+        ],
+      }),
     ],
     external: ['react', 'react-dom', 'react/jsx-runtime'],
   },
