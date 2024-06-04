@@ -46,7 +46,7 @@
     ]
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "private": false
 }
