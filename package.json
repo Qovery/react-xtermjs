@@ -1,0 +1,58 @@
+{
+  "name": "react-xtermjs",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release",
+    "prepublish": "npm run build"
+  },
+  "author": "@RemiBonnet @ctjhoa",
+  "license": "ISC",
+  "description": "Xterm.js for React",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.3.1",
+    "@xterm/xterm": "^5.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup": "^4.17.2",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-import-css": "^3.5.0",
+    "semantic-release": "^24.0.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Qovery/react-xtermjs.git"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/npm",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/github"
+      ]
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false
+}
