@@ -17,6 +17,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@semantic-release/github": "^10.0.7",
     "@types/react": "^18.3.1",
     "@xterm/xterm": "^5.5.0",
     "react": "^18.3.1",
