@@ -11,7 +11,6 @@ export default [
       {
         file: 'dist/index.js',
         format: 'cjs',
-        sourcemap: true,
       },
       {
         file: 'dist/index.min.js',
@@ -31,6 +30,7 @@ export default [
         declaration: true,
         declarationDir: 'dist',
         rootDir: 'src',
+        sourceMap: false,
       }),
       postcss({ extensions: ['.css'], inject: true, extract: false }),
     ],
