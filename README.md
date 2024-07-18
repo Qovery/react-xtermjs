@@ -69,4 +69,4 @@ Plus, find a complete example with add-ons of our Console at Qovery [here](https
 
 <hr />
 
-<p>`react-xtermjs`` is initiated and maintained by <a href="https://qovery.com" target="blank">Qovery</a>.</p>
+`react-xtermjs` is initiated and maintained by <a href="https://qovery.com" target="blank">Qovery</a>
