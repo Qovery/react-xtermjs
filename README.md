@@ -21,15 +21,9 @@ Yarn:
     yarn add react-xtermjs
 ```
 
-### Usage
+## Usage
 
-This package provides two main ways to use the XTerm component: using the useXTerm hook and the XTerm component.
-
-#### Using the `useXTerm`` hook
-
-The useXTerm hook is a flexible way to integrate XTerm.js with fine-grained control over the terminal instance.
-
-**Example**
+#### `useXTerm` hook:
 
 ```js
 import React, { useRef, useEffect } from 'react'
@@ -44,11 +38,7 @@ const MyTerminal = () => {
 }
 ```
 
-#### Using the `XTerm`` component
-
-The XTerm component offers a higher-level abstraction, making it easier to integrate the terminal with minimal setup.
-
-**Example**
+#### `XTerm` component:
 
 ```js
 import React from 'react'
@@ -74,8 +64,9 @@ const MyTerminal = () => {
 }
 ```
 
-For a full list of available parameters, refer to the XTerm.js documentation: [XTerm.js Docs](https://xtermjs.org/docs/).
+For a full list of available parameters, refer to the XTerm.js documentation: [XTerm.js Docs](https://xtermjs.org/docs/).  
+Plus, find a complete example with add-ons of our Console at Qovery [here](https://github.com/Qovery/console/blob/staging/libs/domains/services/feature/src/lib/service-terminal/service-terminal.tsx).
 
 <hr />
 
-<p>react-xtermjs is initiated and maintained by <a href="https://qovery.com" target="blank">Qovery</a>.</p>
+<p>`react-xtermjs`` is initiated and maintained by <a href="https://qovery.com" target="blank">Qovery</a>.</p>
