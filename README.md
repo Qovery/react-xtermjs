@@ -12,13 +12,13 @@ A React library to use the powerful of [Xterm.js](https://github.com/xtermjs/xte
 NPM:
 
 ```sh
-    npm install react-xtermjs
+    npm install @xterm/xterm react-xtermjs
 ```
 
 Yarn:
 
 ```sh
-    yarn add react-xtermjs
+    yarn add @xterm/xterm react-xtermjs
 ```
 
 ## Usage

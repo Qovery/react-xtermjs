@@ -1,6 +1,6 @@
 {
   "name": "react-xtermjs",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -19,7 +19,6 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@semantic-release/github": "^10.0.7",
     "@types/react": "^18.3.1",
-    "@xterm/xterm": "^5.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rollup": "^4.17.2",
@@ -28,6 +27,9 @@
     "semantic-release": "^24.0.0",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@xterm/xterm": "^5.5.0"
   },
   "jest": {
     "testEnvironment": "jsdom"
