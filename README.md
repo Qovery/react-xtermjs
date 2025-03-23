@@ -41,9 +41,6 @@ const MyTerminal = () => {
 #### `XTerm` component:
 
 ```js
-import React from 'react'
-import { XTerm } from 'react-xtermjs'
-
 const MyTerminal = () => {
   const onData = (data) => {
     console.log(`Received data: ${data}`)
@@ -55,10 +52,12 @@ const MyTerminal = () => {
 
   return (
     <XTerm
-      onData={onData}
-      onResize={onResize}
       options={{ cursorBlink: true }}
       style={{ width: '100%', height: '100%' }}
+      listeners={{
+        onData,
+        onResize,
+      }}
     />
   )
 }
