@@ -78,7 +78,6 @@ export function useXTerm({ options, addons, listeners }: UseXTermProps = {}) {
     terminalRef,
     options,
     addons,
-    listeners,
     listeners?.onBinary,
     listeners?.onCursorMove,
     listeners?.onData,
