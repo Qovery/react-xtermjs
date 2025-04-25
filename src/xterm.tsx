@@ -1,6 +1,6 @@
 import { type ITerminalAddon, type ITerminalInitOnlyOptions, type ITerminalOptions, Terminal } from '@xterm/xterm'
 import '@xterm/xterm/css/xterm.css'
-import { type ComponentPropsWithoutRef, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ComponentPropsWithoutRef } from 'react'
 
 export interface UseXTermProps {
   addons?: ITerminalAddon[]
@@ -22,48 +22,42 @@ export interface UseXTermProps {
 
 export function useXTerm({ options, addons, listeners }: UseXTermProps = {}) {
   const terminalRef = useRef<HTMLDivElement>(null)
+  const listenersRef = useRef<UseXTermProps['listeners']>(listeners)
   const [terminalInstance, setTerminalInstance] = useState<Terminal | null>(null)
+
+  // Keep the latest version of listeners without retriggering the effect
+  useEffect(() => {
+    listenersRef.current = listeners
+  }, [listeners])
 
   useEffect(() => {
     const instance = new Terminal({
       fontFamily: 'operator mono,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace',
       fontSize: 14,
-      theme: {
-        background: '#101420',
-      },
+      theme: { background: '#101420' },
       cursorStyle: 'underline',
       cursorBlink: false,
       ...options,
     })
 
-    // Load addons if the prop exists
-    if (addons) {
-      addons.forEach((addon) => {
-        instance.loadAddon(addon)
-      })
-    }
+    // Load optional addons
+    addons?.forEach((addon) => instance.loadAddon(addon))
 
-    // Listeners
-    if (listeners) {
-      if (listeners.onBinary) instance.onBinary(listeners.onBinary)
-      if (listeners.onCursorMove) instance.onCursorMove(listeners.onCursorMove)
-      if (listeners.onLineFeed) instance.onLineFeed(listeners.onLineFeed)
-      if (listeners.onScroll) instance.onScroll(listeners.onScroll)
-      if (listeners.onSelectionChange) instance.onSelectionChange(listeners.onSelectionChange)
-      if (listeners.onRender) instance.onRender(listeners.onRender)
-      if (listeners.onResize) instance.onResize(listeners.onResize)
-      if (listeners.onTitleChange) instance.onTitleChange(listeners.onTitleChange)
-      if (listeners.onKey) instance.onKey(listeners.onKey)
-      if (listeners.onData) instance.onData(listeners.onData)
-
-      // Add Custom Key Event Handler
-      if (listeners.customKeyEventHandler) {
-        instance.attachCustomKeyEventHandler(listeners.customKeyEventHandler)
-      }
-    }
+    // Register event listeners from the ref
+    const l = listenersRef.current
+    l?.onBinary && instance.onBinary(l.onBinary)
+    l?.onCursorMove && instance.onCursorMove(l.onCursorMove)
+    l?.onLineFeed && instance.onLineFeed(l.onLineFeed)
+    l?.onScroll && instance.onScroll(l.onScroll)
+    l?.onSelectionChange && instance.onSelectionChange(l.onSelectionChange)
+    l?.onRender && instance.onRender(l.onRender)
+    l?.onResize && instance.onResize(l.onResize)
+    l?.onTitleChange && instance.onTitleChange(l.onTitleChange)
+    l?.onKey && instance.onKey(l.onKey)
+    l?.onData && instance.onData(l.onData)
+    l?.customKeyEventHandler && instance.attachCustomKeyEventHandler(l.customKeyEventHandler)
 
     if (terminalRef.current) {
-      // Mount terminal
       instance.open(terminalRef.current)
       instance.focus()
     }
@@ -74,23 +68,7 @@ export function useXTerm({ options, addons, listeners }: UseXTermProps = {}) {
       instance.dispose()
       setTerminalInstance(null)
     }
-  }, [
-    terminalRef,
-    options,
-    addons,
-    listeners,
-    listeners?.onBinary,
-    listeners?.onCursorMove,
-    listeners?.onData,
-    listeners?.onKey,
-    listeners?.onLineFeed,
-    listeners?.onScroll,
-    listeners?.onSelectionChange,
-    listeners?.onRender,
-    listeners?.onResize,
-    listeners?.onTitleChange,
-    listeners?.customKeyEventHandler,
-  ])
+  }, [options, addons])
 
   return {
     ref: terminalRef,
