@@ -29,7 +29,7 @@
     "typescript": "^5.7.3"
   },
   "peerDependencies": {
-    "@xterm/xterm": "^5.5.0"
+    "@xterm/xterm": "^5.5.0 || ^6.0.0"
   },
   "jest": {
     "testEnvironment": "jsdom"
